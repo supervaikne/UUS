@@ -1,0 +1,2 @@
+"TERE UUESTI" 
+"KORDAME x3" 
