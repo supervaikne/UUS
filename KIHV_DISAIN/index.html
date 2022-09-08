@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+        }
+    </style>
+
+   <link href="video-js.css" rel="stylesheet">
+    
+    <title>KIHV DISAIN</title>
+</head>
+<body style="overflow:hidden; -webkit-text-size-adjust: auto"
+            onload="setTimeout(videoLoad, 500)">
+
+            <video id="my-video" class="video-js" style="z-index: -10; bottom: 0vh; height: 100vh" autoplay loop preload="auto" width="100%" height="auto"
+                    poster="svg/indexback.svg" data-setup='{"fluid": true}'>
+              <!--<source src="video/index.mov" type='video/mov'>-->
+              <source src="video/index.webm" type='video/webm'>
+              <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+              </p>
+            </video>
+          
+            <script src="video.js"></script>
+            <script>
+                function videoLoad() {
+                    document.body.style.opacity = "100";
+                }
+            </script>
+
+    <nav role='navigation'>
+            <div id="menuToggle">
+              
+              <input type="checkbox"/> 
+             
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul id="menu">
+                  
+                <li><a href="portfolio.html">Projects</a></li>
+                    <div class="projectsHover" style="top: 28vh"></div>
+                <li><a href="services.html">Services</a></li>
+                    <div class="servicesHover"></div>
+                <li><a href="contact.html">Contact</a></li>
+                    <div class="servicesHover"></div>
+                <div class="menuflowers">
+                <img src="svg/flower1.svg" id="menuflower1">
+                <img src="svg/flower2.svg" id="menuflower2">
+                <img src="svg/index-phone-menu.svg" id="phone-temporary">
+                </div>
+              </ul>
+              
+            </div>
+            
+          </nav>
+
+        <div id="linkbox">
+           <a href="https://www.facebook.com/KihvDisain/" class="fesar"><img src="svg/facebook.svg" id="facebookimg" style="filter: brightness(0%)"></a>
+                <div class="appear1"></div>
+            <a href="https://www.instagram.com" class="insta"><img src="svg/instagram-logo.svg" id="instagramimg" style="filter: brightness(0%)"></a>
+                <div class="appear2"></div>
+            <!--<a href="https://www.behance.com" class="behance"><img src="svg/behance.svg" id="behanceimg" style="filter: brightness(0%)"></a>
+                <div class="appear3"></div>-->
+            <div id="link"></div>
+        </div>
+
+    <div class="kihv"><p>a&nbsp;creative</p></div>
+    <div class="disain"><p>studio</p></div>
+    <div class="meieoleme"><p><span style="font-family:'Futura Std Medium';">We are</span></p></div>
+    
+    <div class="logo"><img src="svg/logo.svg"></div>
+    <a href="services.html"><div class="we"><p class="do">what do we do?</p></div></a>
+
+   <a href="contact.html">
+        <div class="get">
+                <p class="in">&nbsp;&nbsp;&nbsp;Get in touch</p>
+            <div class="touch">
+            </div>
+            
+        </div>
+    </a>
+
+    <div id="KIHVagency">
+        KIHV Design agency
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

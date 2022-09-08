@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>SERVICES</title>
+
+    <style>
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #ffffff;
+    font-size: 2.5vw;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #ffffff;
+   opacity:  1;
+   font-size: 2.5vw;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #ffffff;
+   opacity:  1;
+   font-size: 2.5vw;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #ffffff;
+   font-size: 2.5vw;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #ffffff;
+   font-size: 2.5vw;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    #ffffff;
+   font-size: 2.5vw;
+}
+    </style>
+
+
+
+</head>
+<body style="background-color: #ffffff; overflow: hidden; overflow-y: hidden; animation: fadein 0.6s">
+
+    <div class="servicesheading"><p>what do</p></div>
+    <div class="servicesheading"><p></br>&nbsp;&nbsp;&nbsp;&nbsp;we do</p></div>
+
+    <nav role='navigation'>
+            <div id="menuToggle" style="background-color: #ffffff; z-index: 3">
+            
+              <input type="checkbox" id="burgerCheck" onclick="showHide()" />
+              
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul id="menu" >
+                <li><a href="portfolio.html">Projects</a></li>
+                    <div class="projectsHover"></div>
+                <li><a href="services.html">Services</a></li>
+                    <div class="servicesHover"></div>
+                <li><a href="contact.html">Contact</a></li>
+                    <div class="servicesHover"></div>
+                <div class="menuflowers">
+                    <img src="svg/flower1.svg" id="menuflower1">
+                    <img src="svg/flower2.svg" id="menuflower2">
+                </div>
+            
+              </ul>
+            </div>
+          </nav>
+
+        <div id="linkbox">
+            <a href="https://www.facebook.com/KihvDisain/" class="fesar"><img src="svg/facebook.svg" id="facebookimg" style="filter:brightness(10%);"></a>
+                <div class="appear1" id="appear1" style="background-color: #fff"></div>
+            <a href="https://www.instagram.com" class="insta"><img src="svg/instagram-logo.svg" id="instagramimg" style="filter:brightness(10%);"></a>
+                <div class="appear2" id="appear2" style="background-color: #fff"></div>
+           <!-- <a href="https://www.google.com" class="behance"><img src="svg/behance.svg" id="behanceimg" style="filter:brightness(10%);"></a>
+                <div class="appear3" id="appear3" style="background-color: #fff"></div> -->
+            <div id="link" style="background-color: #fff"></div>
+        </div>
+
+  
+    <div class="logocontact"><a href="index.html"><img src="svg/logo.svg"></a></div>
+    
+    <div class="services">
+
+<!-- STARTERPACK -->
+        <div class="services-box">
+    <div class="starterpack">
+        <h3>Starter Pack</h3>
+        <div class="service-line"></div>
+        <img src="svg/starter_pack.svg" id="starter-bike" style="filter:invert(0%); z-index: 7; transition: all 0.5s ease-in-out">
+        <span >
+        <p>
+                Great for a startup or a new company.
+                Includes logo design + free business
+                card design.
+        </p>
+        </span>
+        <div class="pinkcircle" id="pink-starter" style="transition: all 0.5s ease-in-out; z-index: 6"></div>
+        <div id="starterButton" onclick="openNav()"><span style="margin: 0 auto;
+            padding: 0; font-size: 0.8vw; position: relative; top: 28%">Ask for an offer!</span></div>
+        <div class="starterPrice">Starting from 180€ + vat</div>
+
+       
+
+    </div>
+
+    <!-- STARTERPACK CONTACTFORM -->
+    
+    <div id="mySidenav" class="sidenav" style="z-index:6">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color: #ffffff; z-index: 3">&times;</a>
+
+        <img src="svg/starter-white.svg" style="display: none; position: absolute; top: 108px; right: 503px; z-index: 2">
+        <img src="svg/pinkcircle.png" style="display: none; position: absolute; height: 58px; width: 58px;  top: 108px; right: 520px; z-index: 1">
+        <img src="svg/contact-blue-lines.svg" style="height: 106.25%; width: 77.4%; position: absolute; top: 0%; left: 12.36%">
+        <p id="name" style="color: #ffffff; left: 26.5%; top: 19%; width: 49.25%">Starter pack</p>
+
+        <form action="starterpack.php" method="post" id="starter-form">
+                <input type="name" name="name" id="contactname" placeholder="name">
+                <input type="name" id="contactemail" name="email" placeholder="e-mail" style="color: #ffffff">
+                <textarea name="comment" id="comment" placeholder="message" style="scrollbar-base-color: #3850a2; scrollbar-face-color: #3850a2;
+                scrollbar-track-color: #3850a2; color: #ffffff; left: 27%; top: 58%; width: 42%; resize: none"></textarea>
+                <input type="submit" name ="send" value="Send" id="submit" style="margin: auto; padding: 0;left: 58%; bottom: 10%; color: #ffffff; width: 8.3%">
+        </form>
+        <script>
+            $(function() {
+                var form = $("#starter-form");
+                var comment = $("#comment").val();
+                
+                form.submit(function(e) {
+                    $(this).attr("disabled","disabled");
+                    e.preventDefault();
+
+                    $.ajax({
+                        type: form.attr('method'), //post
+                        url: form.attr('action'), // send_message.php
+                        data: form.serialize(),
+                        dataType: "json",
+                        success: function(data) {
+                            $(".response").text(data.content);
+                            console.log(form.serialize());
+
+                            if(data.response=="success"){
+                                $(".response").css("color","green");
+                            }
+                            else{
+                                $(".response").css("color","red");
+                            }
+
+                            $("input:submit").removeAttr("disabled");
+                        },
+                        error: function(data) {
+                            $(".response").text("An error occured");
+                            $(".response").css("color","red");
+                            $(".response").css("left","50%");
+                            $("input:submit").removeAttr("disabled");
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+          
+          <script>
+          function openNav() {
+            var x = true;
+              document.getElementById("menuToggle").style.transition = "all 0.1s ease-in-out";
+              document.getElementById("menuToggle").style.opacity = "0";
+              document.getElementById("menuToggle").style.backgroundColor = "#3850a2";
+              document.getElementById("menuToggle").style.zIndex = "-5";
+              document.getElementById("mySidenav").style.width = "50%";
+              document.getElementById("KIHVagency").style.color = "#ffffff";
+              document.getElementById("starter-bike").style.filter = "invert(100%)";
+              document.getElementById("starter-bike").style.left = "28%";
+              document.getElementById("monthly-roller").style.opacity= "0";
+              document.getElementById("pink-starter").style.backgroundColor = "#ffbfbf";
+              document.getElementById("pink-starter").style.opacity = "0";
+              document.getElementById("linkbox").style.zIndex = "10";
+              document.getElementById("facebookimg").style.filter = "brightness(200%)";
+              document.getElementById("instagramimg").style.filter = "brightness(200%)";
+              document.getElementById("behanceimg").style.filter = "brightness(200%)";
+              document.getElementById("facebookimg").onmouseover = function() {mouseOver()};
+              document.getElementById("facebookimg").onmouseout = function() {mouseOut()};
+              document.getElementById("instagramimg").onmouseover = function() {mouseOverInsta()};
+              document.getElementById("instagramimg").onmouseout = function() {mouseOutInsta()};
+              document.getElementById("behanceimg").onmouseover = function() {mouseOverBehance()};
+              document.getElementById("behanceimg").onmouseout = function() {mouseOutBehance()};
+              document.body.style.overflowY = "hidden";
+                
+                
+          }
+          
+          function closeNav() {
+            var x = false;
+              document.getElementById("menuToggle").style.transition = "all 0.5s ease-in-out";
+              document.getElementById("menuToggle").style.opacity = "100";
+              document.getElementById("menuToggle").style.backgroundColor = "#ffffff";
+              document.getElementById("menuToggle").style.zIndex = "3";
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("KIHVagency").style.color = "black";
+              document.getElementById("starter-bike").style.filter = "invert(0%)";
+              document.getElementById("starter-bike").style.left = "0%";
+              document.getElementById("monthly-roller").style.opacity= "1";
+              document.getElementById("pink-starter").style.left = "10px";
+              document.getElementById("pink-starter").style.backgroundColor = "#ffffff";
+              document.getElementById("pink-starter").style.opacity = "100";
+              document.getElementById("facebookimg").style.filter = "brightness(0%)";
+              document.getElementById("instagramimg").style.filter = "brightness(0%)";
+              document.getElementById("behanceimg").style.filter = "brightness(0%)";
+              document.getElementById("facebookimg").onmouseout = function() {linkRegular()};
+              document.getElementById("instagramimg").onmouseout = function() {linkRegular()};
+              document.getElementById("behanceimg").onmouseout = function() {linkRegular()};
+              
+          }
+
+            function mouseOver()  {
+                    document.getElementById("facebookimg").style.filter = "brightness(0%)"; 
+                    
+                }
+            function mouseOut() {
+                    document.getElementById("facebookimg").style.filter = "brightness(200%)"; 
+                }
+
+            function mouseOverInsta() {
+                document.getElementById("instagramimg").style.filter = "brightness(0%)";
+            }
+            function mouseOutInsta() {
+                    document.getElementById("instagramimg").style.filter = "brightness(200%)"; 
+                }
+            function mouseOverBehance() {
+                document.getElementById("behanceimg").style.filter = "brightness(0%)";
+            }
+            function mouseOutBehance() {
+                    document.getElementById("behanceimg").style.filter = "brightness(200%)"; 
+                }
+
+
+        function linkRegular() {
+            document.getElementById("facebookimg").style.filter = "brightness(0%)";
+            document.getElementById("instagramimg").style.filter = "brightness(0%)";
+            document.getElementById("behancerimg").style.filter = "brightness(0%)";
+        }
+
+          function hide() {
+              
+            document.getElementById("starter-bike").style.filter = "invert(100%)";
+          }
+
+          function showHide() {
+            var checkBox = document.getElementById("burgerCheck");
+
+            var serviceImages = document.getElementById("starter-bike");
+
+            if (checkBox.checked == true){
+                document.getElementById("starter-bike").style.transitionDuration = "0.2s";
+                document.getElementById("starter-bike").style.filter = "invert(100%)";
+                document.getElementById("appear1").style.backgroundColor = "#ffbfbf";
+                document.getElementById("appear1").style.zIndex = "4";
+                document.getElementById("appear2").style.backgroundColor = "#ffbfbf";
+                document.getElementById("appear2").style.zIndex = "1";
+                document.getElementById("appear3").style.backgroundColor = "#ffbfbf";
+                document.getElementById("appear3").style.zIndex = "1";
+             } else {
+                document.getElementById("starter-bike").style.transitionDuration = "0.5s";
+                document.getElementById("starter-bike").style.filter = "invert(0%)";
+                document.getElementById("appear1").style.backgroundColor = "white";
+                document.getElementById("appear1").style.zIndex = "4";
+                document.getElementById("appear2").style.backgroundColor = "white";
+                document.getElementById("appear2").style.zIndex = "1";
+                document.getElementById("appear3").style.backgroundColor = "white";
+                document.getElementById("appear3").style.zIndex = "1";
+            }
+          }
+          </script>
+
+     <!-- The Modal -->
+            <div id="myModal" class="modal">
+        
+        <!-- Modal content -->
+            <div class="modal-content">
+                    <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Modal Header</h2>
+                          </div>
+                          <div class="modal-body">
+                            <p>Some text in the Modal Body</p>
+                            <p>Some other text...</p>
+                          </div>
+                          <div class="modal-footer">
+                            <h3>Modal Footer</h3>
+                    </div>
+            </div>
+        
+            </div>
+    
+    <!-- MONTHLYPACK -->
+
+    <div class="monthlypack">
+            <h3>Monthly Pack</h3>
+            <div class="service-line"></div>
+            <img src="svg/monthly_pack.svg" id="monthly-roller" style="z-index: 7; transition: all 0.5s ease-in-out">
+            <span >
+            <p>
+                You need some smaller things, like
+                brochures,posters etc. designed every month?
+                Then this pack is for you. 
+            </p>
+            </span>
+            <div class="pinkcircle"></div>
+            <div id="starterButton" onclick="openMonthlyNav()"><span style="margin: 0 auto;
+                padding: 0; font-size: 0.8vw; position: relative; top: 28%">Ask for an offer!</span></div>
+            <div class="starterPrice">Starting from 600€ + vat</div>
+        </div>
+
+        <!-- MONTHLYPACK CONTACTFORM -->
+
+        <div id="monthlyNav" class="sidenav" style="z-index:6; background-color: #3850a2">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeMonthlyNav()" style="color: #ffffff; z-index: 3">&times;</a>
+    
+            <img src="svg/starter-white.svg" style="display: none; position: absolute; top: 108px; right: 503px; z-index: 2">
+            <img src="svg/pinkcircle.png" style="display: none; position: absolute; height: 58px; width: 58px;  top: 108px; right: 520px; z-index: 1">
+            <img src="svg/contact-blue-lines.svg" style="height: 106.25%; width: 77.4%; position: absolute; top: 0%; left: 12.36%">
+            <p id="name" style="color: #ffffff; left: 26.5%; top: 19%; width: 49.25%">Monthly pack</p>
+    
+            <form action="contact-us-send.php" method="post">
+                    <input type="name" name="name" id="contactname" placeholder="name">
+                    <input type="name" id="contactemail" name="email" placeholder="e-mail" style="color: #ffffff">
+                    <textarea name="comment" placeholder="message" style="scrollbar-base-color: #3850a2; scrollbar-face-color: #3850a2;
+                    scrollbar-track-color: #3850a2; color: #ffffff; left: 27%; top: 58%; width: 42%; resize: none"></textarea>
+                    <input type="submit" name ="send" value="Send" id="submit" style="margin: auto; padding: 0;left: 58%; bottom: 10%; color: #ffffff; width: 8.3%">
+            </form>
+        </div>
+
+        <script>
+            function openMonthlyNav() {
+                document.getElementById("monthlyNav").style.width = "50%";
+                document.getElementById("menuToggle").style.transition = "all 0.1s ease-in-out";
+                document.getElementById("menuToggle").style.opacity = "0";
+                document.getElementById("menuToggle").style.backgroundColor = "#3850a2";
+                document.getElementById("menuToggle").style.zIndex = "-5";
+                document.getElementById("KIHVagency").style.color = "#ffffff";
+                document.getElementById("monthly-roller").style.filter = "invert(100%)";
+                document.getElementById("monthly-roller").style.left = "28%";
+                document.getElementById("monthly-roller").style.top = "-30vh";
+                document.getElementById("starter-bike").style.opacity= "0";
+                document.getElementById("pink-starter").style.backgroundColor = "#ffbfbf";
+                document.getElementById("pink-starter").style.opacity = "0";
+                document.getElementById("linkbox").style.zIndex = "10";
+                document.getElementById("facebookimg").style.filter = "brightness(200%)";
+                document.getElementById("instagramimg").style.filter = "brightness(200%)";
+                document.getElementById("behanceimg").style.filter = "brightness(200%)";
+                document.getElementById("facebookimg").onmouseover = function() {mouseOver()};
+                document.getElementById("facebookimg").onmouseout = function() {mouseOut()};
+                document.getElementById("instagramimg").onmouseover = function() {mouseOverInsta()};
+                document.getElementById("instagramimg").onmouseout = function() {mouseOutInsta()};
+                document.getElementById("behanceimg").onmouseover = function() {mouseOverBehance()};
+                document.getElementById("behanceimg").onmouseout = function() {mouseOutBehance()};
+                document.body.style.overflowY = "hidden";
+            }
+            function closeMonthlyNav() {
+            var x = false;
+              document.getElementById("menuToggle").style.transition = "all 0.5s ease-in-out";
+              document.getElementById("menuToggle").style.opacity = "100";
+              document.getElementById("menuToggle").style.backgroundColor = "#ffffff";
+              document.getElementById("menuToggle").style.zIndex = "3";
+              document.getElementById("monthlyNav").style.width = "0";
+              document.getElementById("KIHVagency").style.color = "black";
+              document.getElementById("monthly-roller").style.filter = "invert(0%)";
+              document.getElementById("monthly-roller").style.left = "0%";
+              document.getElementById("monthly-roller").style.top = "-6vh";
+              document.getElementById("starter-bike").style.opacity= "1";
+              document.getElementById("pink-starter").style.left = "15px";
+              document.getElementById("pink-starter").style.backgroundColor = "#ffffff";
+              document.getElementById("pink-starter").style.opacity = "100";
+              document.getElementById("facebookimg").style.filter = "brightness(0%)";
+              document.getElementById("instagramimg").style.filter = "brightness(0%)";
+              document.getElementById("behanceimg").style.filter = "brightness(0%)";
+              document.getElementById("facebookimg").onmouseout = function() {linkRegular()};
+              document.getElementById("instagramimg").onmouseout = function() {linkRegular()};
+              document.getElementById("behanceimg").onmouseout = function() {linkRegular()};
+              
+          }
+        </script>
+
+
+        <!-- PERSONALSLAVE -->
+
+        <div class="personalslave">
+                <h3>Personal Slave</h3>
+                <div class="service-line"></div>
+                <img src="svg/personal_slave.svg">
+                <p>
+                    We do graphic design, branding, illustrations,
+                    web design and much more. Just get in touch
+                    with us and lets talk. Or maybe drink tea or
+                    eat good food. We love food.
+                </p>
+                <div class="pinkcircle" style="position:absolute"></div>
+                <a href="contact.html">
+                    <div id="starterButton">
+                        <span style="margin: 0 auto;
+                                     padding: 0; font-size: 0.8vw; position: relative; top: 28%">Get in Touch!</span>
+                    </div>
+                </a>
+        </div>
+    </div>
+</div>
+
+        <div id="KIHVagency">
+                    KIHV Design agency
+        </div>
+        
+        <img src="svg/services-flowers.svg" id="services-flowers">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

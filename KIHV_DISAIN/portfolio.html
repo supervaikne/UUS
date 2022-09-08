@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>PORTFOLIO</title>
+</head>
+<body style="overflow: visible; overflow-x: hidden; height: 1000px; animation: fadein 0.6s">
+
+
+<div class="logocontact" style="z-index: 13"><a href="index.html"><img src="svg/logo.svg"></a></div>
+
+<div class="thisisourwork"><p>this is </br>&nbsp; our work</p></div>
+
+<div class="portdescription">
+    <img src="svg/portfolio.svg" style="float: left; height: 10vh; width: 10vw; position: absolute; left: 3vw; top: 17vh">
+    <p style="float: right">We are a creative studio based in Tallinn. We like visually beatiful but also functional design. 
+        Kihv designs lot of different thing, starting from a logo to a visual identity and web design. 
+        Just get in touch with us and lets talk and find a solution together. 
+        Maybe meet for lunch and share innovative ideas and good food. 
+        We are always open to new people and working together with awesome companys. </p>
+</div>
+
+<nav role='navigation'>
+        <div id="menuToggle" style="z-index: 11">
+          <input type="checkbox" id="portCheck" onclick="noScroll(), linkboxZ()"/>
+          
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+                <li><a href="portfolio.html">Projects</a></li>
+                    <div class="projectsHover"></div>
+                <li><a href="services.html">Services</a></li>
+                    <div class="servicesHover"></div>
+                <li><a href="contact.html">Contact</a></li>
+                    <div class="servicesHover"></div>
+            <div class="menuflowers">
+              <img src="svg/flower1.svg" id="menuflower1">
+              <img src="svg/flower2.svg" id="menuflower2">
+            </div>
+          </ul>
+        </div>
+      </nav>
+
+<div class="portlist" style="display: none">
+    <ul>
+        <div id="myBtnContainer"> 
+        <li><button class="btn active" onclick="filterSelection('all')">Everything</button></li>
+            <div class="listDot-everything"></div>   
+        <li><button class="btn" onclick="filterSelection('graphic')">Graphic</button></li>
+            <div class="listDot-graphic"></div>
+        <li><button class="btn" onclick="filterSelection('illustrations')">Illustrations</button></li>
+        <li><button class="btn" onclick="filterSelection('web-design')">Web Design</button></li>
+        <li><button class="btn" onclick="filterSelection('branding')">Branding</button></li>
+        </div>
+        
+    </ul>
+</div>
+
+<!-- FACEBOOK, INSTAGRAM etc.. -->
+
+<div id="linkbox" style="z-index: 13">
+        <a href="https://www.facebook.com/KihvDisain/" class="fesar"><img src="svg/facebook.svg" id="facebookimg" style="filter: brightness(0%)"></a>
+          <div class="appear1"></div>
+        <a href="https://www.instagram.com" class="insta"><img src="svg/instagram-logo.svg" id="instagramimg" style="filter: brightness(0%)"></a>
+          <div class="appear2"></div>
+        <!--<a href="https://www.google.com" class="behance"><img src="svg/behance.svg" id="behanceimg" style="filter: brightness(0%)"></a>
+          <div class="appear3"></div> -->
+
+</div>
+
+<script>
+  function linkboxZ() {
+
+    var checkBox = document.getElementById("portCheck");
+
+    if (portCheck = true) {
+    document.getElementById("toTop").style.zIndex = "5";
+    }
+    else {
+      document.getElementById("toTop").style.zIndex = "12";
+    }
+  }
+
+
+</script>
+
+<!-- GALLERY FOR PHONE -->
+
+<div id="gallery-phone" style="width: 90vw; height: auto; position: absolute; left: 5vw; top: 30vh">
+    <img src="portfolio/leelo-pakid@3x.png">
+    <img src="portfolio/yolotravel-roheline-a-a-rega-3@3x.png">
+    <img src="portfolio/yolotravel-roosa-5@3x.png">
+    <img src="portfolio/loomeha-kk-2-na-idis-futu@3x.png">
+    <img src="portfolio/silt-must-valge@3x.png">
+    <img src="portfolio/sisu-na-idis@3x.png">
+    <img src="portfolio/kaleidoskoop-sisu-na-idis@3x.png">
+    <img src="portfolio/visiitkaart-2-valge@3x.png">
+    <img src="portfolio/loomehakk-naidis-1@3x.png">
+    <img src="portfolio/visitkad@3x.png">
+    <img src="portfolio/menu-u-kohvitass-2@3x.png">
+</div>
+
+<!-- GALLERY  -->
+<div class="gallery">
+<div class="row">
+        <div class="column graphic" style="width: 99.5%; min-height: 796px; z-index: 2">
+          <div class="content" style="width:100%">
+            <img src="portfolio/leelo-pakid.png" alt="Mountains" style="width: 99%; min-height: 100vh">
+            <div id="imgdescription">
+                    <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                    position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                    <h1>Graphic Design</h1>
+                    <p>Logos for everybody</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column graphic" style="position: absolute; top: 105vh; left: 0%">
+          <div class="content">
+            <img src="portfolio/yolotravel-roheline-a-a-rega-3.png" alt="Lights" style="min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                    <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                    position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                    <h1>Branding</h1>
+                    <p>Business card design for travel company</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="column graphic" style="position: absolute; top: 105vh; left: 50%">
+          <div class="content">
+            <img src="portfolio/sleepi-kott-logo@3x.png" alt="Nature" style="min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh; object-fit: cover">
+            <div id="imgdescription" style="background-color: rgba(0, 0, 0, 0)">
+                    <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                    position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                    <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                    <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="column illustrations" style="position: absolute; top: 159vh; left: 0%">
+          <div class="content">
+            <img src="portfolio/yolotravel-roosa-5.png" alt="Car" style="min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                    <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                    position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                    <h1>Graphic Design</h1>
+                    <p>Logos for everybody</p>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="column illustrations" style="position: absolute; top: 159vh; left: 50%">
+          <div class="content" style="object-fit: cover">
+            <img src="portfolio/loomeha-kk-2-na-idis-futu.png" alt="Car" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+
+          </div>
+          
+        </div>
+        <div class="column illustrations" style="position: absolute; top: 214vh; left: 0%">
+          <div class="content">
+            <img src="portfolio/silt-must-valge@2x.png" alt="Car" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+
+          </div>
+        </div>
+      
+        <div class="column illustrations" style="position: absolute; top: 214vh; left: 50%">
+          <div class="content">
+            <img src="portfolio/sisu-na-idis@2x.png" alt="People" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic  || Design</h1>
+                <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column illustrations" style="position: absolute; top: 268vh; left: 0%">
+          <div class="content">
+            <img src="portfolio/kaleidoskoop-sisu-na-idis@2x.png" alt="People" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+          </div>
+        </div>
+        <div class="column branding" style="position: absolute; top: 268vh; left: 50%">
+          <div class="content">
+            <img src="portfolio/visiitkaart-2-valge@2x.png" alt="People" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+            <div id="imgdescription">
+                <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+            </div>
+          </div>
+        </div>
+        <div class="column graphic" style="position: absolute; top: 322vh; left: 0%">
+            <div class="content">
+                  <img src="portfolio/loomehakk-naidis-1@2x.png" alt="People" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+                  <div id="imgdescription">
+                      <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                      position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                      <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                      <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+                </div>
+            </div>
+        </div>
+        <div class="column graphic" style="position: absolute; top: 322vh; left: 50%">
+            <div class="content">
+                <img src="portfolio/visitkad@2x.png" alt="People" style="object-fit: cover; min-width: 31.5vw; max-width: 31.5vw; min-height: 49vh; max-height: 49vh">
+                <div id="imgdescription">
+                    <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                    position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                    <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                    <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="column nature" style="position: absolute; top: 376vh; width: 99.4%; min-height: 796px">
+                <div class="content" style="width:100%">
+                  <img src="portfolio/menu-u-kohvitass-2@2x.png" alt="Mountains" style="width:100%; min-height: 906px; min-height: 100vh">
+                  <div id="imgdescription">
+                      <div style="height: 5vh; width: 2.5vw; border-radius: 90px; background-color: #ffbfbf;
+                      position: relative; z-index: -1; bottom: -6.5vh; left: 0.5vw"></div>
+                      <h1 style="background-color: rgba(0, 0, 0, 0)">Graphic Design</h1>
+                      <p style="background-color: rgba(0, 0, 0, 0)">Logos for everybody</p>
+                </div>
+                </div>
+              </div>
+      </div>
+    </div>
+
+    <div id="KIHVagency" style="z-index:11; bottom: 19vh">
+            KIHV Design agency
+    </div>
+
+    
+    <img src="svg/uparrow.svg" onclick="topFunction()" id="toTop" title="Go to top"><!--</button> -->
+
+    <script>
+
+    function noScroll() {
+        var checkBox = document.getElementById("portCheck");
+
+        if (checkBox.checked == true){
+
+            document.body.style.overflow = "hidden";
+
+         } else {
+
+            document.body.style.overflow = "visible";
+        }
+      }
+
+
+    // GALLERY FILTER TESTING
+
+    filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+      </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script src="main.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+</body>

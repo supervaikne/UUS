@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CONTACT</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            @media screen and (max-width: 800px) {
+                #menuToggle {
+                    background-color: red;
+                }
+            }
+            @media only screen and (max-width:800px) {
+                #contactbox-phone {
+                    background-color: #ffbfbf;
+                }
+            }
+            ::placeholder {
+                color: black;
+                opacity: 1; /* Firefox */
+                font-size: 2.5vw;
+            }
+            
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+               color: black;
+            }
+            
+            ::-ms-input-placeholder { /* Microsoft Edge */
+               color: black;
+            }
+            
+            </style>
+
+    </head>
+    <body style="animation: fadein 0.6s">
+
+            <div class="logocontact"><a href="index.html"><img src="svg/logo.svg"></a></div>
+
+            <div class="contactinfo">
+                <h3>You&nbsp;know&nbsp;that&nbsp;sound&nbsp;that&nbsp;</br>
+                    email&nbsp;notification&nbsp;makes?&nbsp;</br>
+                    We&nbsp;love&nbsp;that&nbsp;sound,&nbsp;feel&nbsp;</br> 
+                    free&nbsp;to&nbsp;contact&nbsp;us</h3>
+                
+                <div class="sarah">
+                    <img src="svg/sarahjo.jpg" style="border-radius: 50px">
+                    <p>Sarah&nbsp;Johanna&nbsp;Kelder</br>Sales&nbsp;and&nbsp;Marketing</br>+372&nbsp;5851&nbsp;5455</p>
+                
+                </div>
+                <div class="kristen">
+                    <img src="svg/kristen.png">
+                    <p>Kristen Raudkats</br> Art Director </br>5018000</p>
+                </div>
+            </div>
+
+            <div class="contactline">
+                <img src="svg/contactline.svg">
+            </div>
+
+            <nav role='navigation'>
+                    <div id="menuToggle" style="background-color: #ffffff">
+                    
+                      <input type="checkbox" id="contactCheck" onclick="linkBoxColor"/>
+                      
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      
+                      <ul id="menu">
+                            <li><a href="portfolio.html">Projects</a></li>
+                                <div class="projectsHover"></div>
+                            <li><a href="services.html">Services</a></li>
+                                <div class="servicesHover"></div>
+                            <li><a href="contact.html">Contact</a></li>
+                                <div class="servicesHover"></div>
+                        <div class="menuflowers">        
+                            <img src="svg/flower1.svg" id="menuflower1">
+                            <img src="svg/flower2.svg" id="menuflower2">
+                        </div>
+                      </ul>
+                    </div>
+                  </nav>
+        <div id="contactbox">
+            <h1>get in</br>&nbsp; &nbsp; touch</h1>
+        <img src="svg/contact-final.svg" style="height: 100vh; z-index: -3; width: 100vw; position: absolute; right: -1.5%; bottom: -7vh">
+        </div>
+        <div id="contactbox-phone" style="display: none; width: 100vw; height: 100vh"></div>
+        <form  method="post" action="send_message.php" id="contact-form">
+                <div>
+                <input type="name" id="name" name="name" placeholder="name" style="left: 59%; top: 45vh">
+                <input type="name" id="email" name="email" placeholder="e-mail" style="left: 59%">
+                <textarea id="comment" name="comment" placeholder="message" style="resize: none; top: 65vh; left: 59%; width: 25%"></textarea>
+                </div>
+                <input name ="send" type="submit" value="Send" id="submit" style="border-color: black; bottom: 6vh; left: 75vw">
+                <!-- Display the response returned after form submit -->
+                <span class="response" style="position: absolute; left: 56.3%; top: 3%;  font-family: Futura Std Medium"></span>
+        </form>
+        <script>
+            $(function() {
+                var form = $("#contact-form");
+                var comment = $("#comment").val();
+                
+                form.submit(function(e) {
+                    $(this).attr("disabled","disabled");
+                    e.preventDefault();
+
+                    $.ajax({
+                        type: form.attr('method'), //post
+                        url: form.attr('action'), // send_message.php
+                        data: form.serialize(),
+                        dataType: "json",
+                        success: function(data) {
+                            $(".response").text(data.content);
+                            console.log(form.serialize());
+
+                            if(data.response=="success"){
+                                $(".response").css("color","green");
+                            }
+                            else{
+                                $(".response").css("color","red");
+                            }
+
+                            $("input:submit").removeAttr("disabled");
+                        },
+                        error: function(data) {
+                            $(".response").text("An error occured");
+                            $(".response").css("color","red");
+                            $(".response").css("left","50%");
+                            $("input:submit").removeAttr("disabled");
+                        }
+                    });
+                });
+            });
+        </script>
+    <div id="linkbox">
+            <a href="https://www.facebook.com/KihvDisain/" class="fesar"><img src="svg/facebook.svg" id="facebookimg" style="filter: brightness(0%)"></a>
+                <div class="appear1" id="appear1" style="background-color: #fff"></div>
+            <a href="https://www.instagram.com" class="insta"><img src="svg/instagram-logo.svg" id="instagramimg" style="filter: brightness(0%)"></a>
+                <div class="appear2" id="appear2" style="background-color: #fff"></div>
+           <!-- <a href="https://www.google.com" class="behance"><img src="svg/behance.svg" id="behanceimg" style="filter: brightness(0%)"></a>
+                <div class="appear3" id="appear3" style="background-color: #fff"></div> -->
+            <div id="link" style="background-color: white"></div>
+    </div>
+
+    <script>
+            function linkBoxColor() {
+   
+               var checkBox = document.getElementById("contactCheck");
+               var link = document.getElementById("link");
+   
+               if (checkBox.checked == true) {
+                    document.getElementById("link").style.backgroundColor = "red";
+                    document.getElementById("link").style.zIndex = "15";
+                    link.style.backgroundColor = "red";
+               }
+               else {
+                   
+               }
+            }
+   </script>
+
+    <img src="svg/contactflower.svg" class="contactflower">
+
+    <div id="KIHVagency">
+            KIHV Design agency
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+    <script src="main.js"></script>
+    </body>
+</html>

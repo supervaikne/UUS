@@ -1,0 +1,18 @@
+1. Menüü , fesar jne ühele joonele. DONE
+2. we are A creative studio korda seada. Kolmel real. DONE
+3. What do we do roosaks. DONE
+4. Burgermenüü jooned kitsamaks. DONE
+5. Burgermenüü hover maha. DONE
+6. Menüü valikutele jooned vasakult paremale hoverdades. DONE
+7. Portfoolio lehel filtrivalikud korda. 
+8. Telefonivaated.
+9. Kontakti lehel on üks joon puudu piltide ja teksti vahel. DONE
+10. Kontakti lehele natuke rohkem õhku. Üleüldiselt ka. DONE
+11. Sõnumi saatmis võimalus kontaktilehele.
+12. Kontaktilehel burgermenüü taust valgeks värvida. DONE
+13. Effektid facebookidele ja asjadele. DONE
+14. Kõrgem resolutsioon vaade. DONE
+15. Galerii piltidele hover. Kirjeldus + Alaliik + valge opacity DONE
+16. Linkboxi hoverid pole paigas. DONE
+17. Kontaktitaust DONE
+18. Logo z-indexit tõsta. DONE
